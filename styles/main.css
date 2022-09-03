@@ -1,0 +1,66 @@
+body{
+    width: 100vw;
+    overflow-x: hidden;
+    color: #070707;
+}
+.navbar{
+    height: 10vh;
+}
+#brand{
+    transition: transform .2s ease-in-out;
+}
+#brand:hover{
+    transform: scale(1.15) rotate(-10deg);
+}
+#hero{
+    background-color: #070707;
+    background-image: url('../images/R.jfif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 42vh;
+}
+footer{
+    background-color: #070707;
+    /* height: 10vh; */
+}
+.card{
+    width: 98%;
+    /* height: 35vh; */
+}
+.card-icon{
+    background-color: #07070733;
+    border-radius: 50%;
+}
+.btn{
+    background-color: #070707;
+    color: white;
+    border: 1.5px solid #070707;
+}
+a{
+    text-decoration: none;
+    color: #0707077d;
+    transition: color .2s ease-in-out;
+}
+a.active{
+    color: #070707;
+}
+a:hover{
+    color: #070707;
+}
+.code-container{
+    background-color: #070707;
+}
+.copy-btn{
+    right: 2%;
+    z-index: 1;
+}
+.result-container{
+    background-color: #07070733;
+}
+/* .hide{
+    visibility: hidden;
+}
+.show{
+    visibility: visible;
+} */

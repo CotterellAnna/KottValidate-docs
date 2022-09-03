@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/logo.svg" type="image/x-icon">
+    <!-- jQuery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <!-- validate CSS only -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/CotterellAnna/KottValidate_plugin/validateForm.min.css">
+   <!-- jQuery datatables CDN -->
+   <link type="text/css" rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <!-- rainbow CSS -->
+    <link rel="stylesheet" href="./styles/rainbow.css">
+    <!--Bootstrap CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- remix icon CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles/main.css">
+    <title>KottValidate</title>
+</head>
+<body class="position-relative">
+    <nav class="navbar navbar-expand-lg bg-light position-sticky top-0 w-100" style="z-index: 1;">
+        <div class="container-fluid d-flex">
+            <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#nav-menu1" aria-controls="nav-memu" aria-expanded="false" aria-label="Toggle navigation">
+                <img src="./images/menu-fill.svg" alt="menu" class="img-fluid">
+            </button>
+            <a class="navbar-brand m-0" href="./index.html">
+                <img src="./images/logo.svg" alt="logo" class="img-fluid" id="brand"> Kott<span class="fw-bolder">V</span>alidate
+            </a>
+            <ul class="navbar-nav m-0 w-25 d-flex flex-row justify-content-end">
+                <li class="nav-item text-center mx-2">
+                    <a class="nav-link active" aria-current="page" href="https://github.com/CotterellAnna">
+                        <img src="./images/github-fill.svg" alt="github" class="img-fluid">
+                    </a>
+                </li>
+                <li class="nav-item text-center mx-2">
+                    <a class="nav-link" href="https://www.linkedin.com/in/anna-cotterell-260759161/">
+                        <img src="./images/linkedin-box-fill.svg" alt="linkedin" class="img-fluid">
+                    </a>
+                </li>
+            </ul>
+            <div id="nav-menu1" class="col-lg-4 offcanvas offcanvas-start bg-light d-lg-none" tabindex="1" aria-labelledby="nav-menu" style="height: 100vh;">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasLabel">
+                        <a class="navbar-brand m-0" href="./index.html">
+                            <img src="./images/logo.svg" alt="logo" class="img-fluid" id="brand"> Kott<span class="fw-bolder">V</span>alidate
+                        </a>
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  </div>
+                  <div class="offcanvas-body">
+                    <nav>
+                        <div class="row row-cols-1 w-100 px-3 pb-4 mx-0">
+                            <nav class="px-0">
+                                <a class="fw-bolder d-flex align-items-center my-2" href="#intro-details">
+                                    <img src="./images/introduction.svg" alt="intro" class="img-fluid p-1 card-icon">
+                                    <h6 class="m-0 ms-1 fw-bold">Introduction</h6>
+                                </a>
+                            </nav>
+                            <nav class="px-0">
+                                <a class="fw-bolder d-flex align-items-center my-2" href="#installation-details">
+                                    <img src="./images/installation.svg" alt="installation" class="img-fluid p-1 card-icon">
+                                    <h6 class="m-0 ms-1 fw-bold">Installation</h6>
+                                </a>
+                            </nav>
+                            <nav class="px-0">
+                                <a class="fw-bolder d-flex align-items-center my-2" href="#docs-details">
+                                    <img src="./images/docs.svg" alt="docs" class="img-fluid p-1 card-icon">
+                                    <h6 class="m-0 ms-1 fw-bold">Docs</h6>
+                                </a>
+                            </nav>
+                            <nav class="px-0 ms-4">
+                                <a class="d-flex align-items-center my-2" href="#why-details">
+                                    <h6 class="m-0 ms-1 fw-bold">Why KottValidate?</h6>
+                                </a>
+                            </nav>
+                            <nav class="px-0 ms-4">
+                                <a class="d-flex align-items-center my-2" href="#demo-code-details">
+                                    <h6 class="m-0 ms-1 fw-bold">Demo code</h6>
+                                </a>
+                            </nav>
+                            <nav class="px-0 ms-4">
+                                <a class="d-flex align-items-center my-2" href="#demo-form-details">
+                                    <h6 class="m-0 ms-1 fw-bold">Demo form</h6>
+                                </a>
+                            </nav>
+                            <nav class="px-0 ms-4">
+                                <a class="d-flex align-items-center my-2" href="#options-details">
+                                    <h6 class="m-0 ms-1 fw-bold">Validate method options</h6>
+                                </a>
+                            </nav>
+                        </div>
+                    </nav>
+                  </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid px-0 position-relative">
+        <div class="row row-cols-lg-2 g-0">
+            <!-- side nav container starts -->
+            <div class="col-lg-3 d-none d-lg-block position-fixed top-0" style="height: 100vh; background-color: #07070717; width: 25%; padding-top: 10vh;">
+                <nav id="nav-menu_">
+                    <div class="row row-cols-1 w-100 px-3 pb-4 mx-0">
+                        <nav class="px-0">
+                            <a class="fw-bolder d-flex align-items-center my-2" href="#intro-details">
+                                <img src="./images/introduction.svg" alt="intro" class="img-fluid p-1 card-icon">
+                                <h6 class="m-0 ms-1 fw-bold">Introduction</h6>
+                            </a>
+                        </nav>
+                        <nav class="px-0">
+                            <a class="fw-bolder d-flex align-items-center my-2" href="#installation-details">
+                                <img src="./images/installation.svg" alt="installation" class="img-fluid p-1 card-icon">
+                                <h6 class="m-0 ms-1 fw-bold">Installation</h6>
+                            </a>
+                        </nav>
+                        <nav class="px-0">
+                            <a class="fw-bolder d-flex align-items-center my-2" href="#docs-details">
+                                <img src="./images/docs.svg" alt="docs" class="img-fluid p-1 card-icon">
+                                <h6 class="m-0 ms-1 fw-bold">Docs</h6>
+                            </a>
+                        </nav>
+                        <nav class="px-0 ms-4">
+                            <a class="d-flex align-items-center my-2" href="#why-details">
+                                <h6 class="m-0 ms-1 fw-bold">Why KottValidate?</h6>
+                            </a>
+                        </nav>
+                        <nav class="px-0 ms-4">
+                            <a class="d-flex align-items-center my-2" href="#demo-code-details">
+                                <h6 class="m-0 ms-1 fw-bold">Demo code</h6>
+                            </a>
+                        </nav>
+                        <nav class="px-0 ms-4">
+                            <a class="d-flex align-items-center my-2" href="#demo-form-details">
+                                <h6 class="m-0 ms-1 fw-bold">Demo form</h6>
+                            </a>
+                        </nav>
+                        <nav class="px-0 ms-4">
+                            <a class="d-flex align-items-center my-2" href="#options-details">
+                                <h6 class="m-0 ms-1 fw-bold">Validate method options</h6>
+                            </a>
+                        </nav>
+                    </div>
+                </nav>
+            </div>
+            <!-- side nav ends -->
+            
+            <div class="col-12 col-lg-9 px-0 offset-lg-3">
+                <div data-bs-spy="scroll" data-bs-target="#nav-menu_, #nav-menu1" data-bs-smooth-scroll="true" data-bs-offset="0" class="scrollspy-example">
+                    <!-- page header starts -->
+                    <div class="container-fluid d-flex flex-column justify-content-center align-items-center text-white text-center px-5" id="hero">
+                        <h1 class="container fw-bold"><img src="./images/logo copy.svg" alt="logo" class="img-fluid"> Kott<span class="fw-bolder">V</span>alidate</h1>
+                        <p class="">Perform easy, fast and reliable validation on HTML forms</p>
+                    </div>
+                    <!-- page header ends -->
+                    <div class="p-5">
+                        <!-- introduction container starts -->
+                        <div class="container-fluid mt-5" id="intro-details">
+                            <h4># Introduction</h4>
+                            <p>KottValidate is a jQuery form validation plugin that makes form validation easy and stress free.
+                            </p>
+                        </div>
+                        <!-- introduction container ends -->
+
+                        <!-- installation details container starts -->
+                        <div class="container-fluid mt-5" id="installation-details">
+                            <h4># Installation</h4>
+                            <!-- using CDN -->
+                            <p>To make use of KottValidate, include KottValidate's compiled and minifed css and JS in your project. KottValidate makes use of bootstrap 5.</p>
+                            <!-- cdn code -->
+                            <div class="container code-container p-4 pb-2 rounded-3 position-relative mb-4">
+                                <img title="copy to clipboard" src="./images/clipboard2.svg" alt="copy" class="img-fluid d-block position-absolute copy-btn" role="button">
+                                <pre><code class="text-dark" data-language="html"><!-- CSS only -->&NewLine;<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/CotterellAnna/KottValidate_plugin/validateForm.min.css"></code></pre>
+                            </div>
+                            <div class="container code-container p-4 pb-2 rounded-3 position-relative">
+                                <img title="copy to clipboard" src="./images/clipboard2.svg" alt="copy" class="img-fluid d-block position-absolute copy-btn" role="button">
+                                <pre><code class="text-dark" data-language="html"><!-- JS only -->&NewLine;<script src="https://cdn.jsdelivr.net/gh/CotterellAnna/KottValidate_plugin/validate.min.js"></script></code></pre>
+                            </div>
+                            <!-- cdn code ends -->
+                            <!-- downloading resources -->
+                            <h4 class="my-2">Or</h4>
+                            <h5 class="my-0">Download the source files</h5>
+                            <p class="my-2">You can make changes to the styling of the feedback messages and icons by downloading the KottValidate source files. Click the download button below to download the source files.</p>
+                            <a href="./KottValidate_src.zip" download="KottValidate_src">
+                                <button class="btn my-0" type="button">Download </button>
+                            </a>
+                            <!-- downloading resources ended  -->
+                        </div>
+                        <!-- installation details container ends -->
+
+                        <!-- docs container starts -->
+                        <div class="container-fluid mt-5" id="docs-details">
+                            <h4># The Docs</h4>
+                            <div class="container-fluid" id="why-details">
+                                <h5 class="text-decoration-underline mt-3"># Why KottValidate?</h5>
+                                <p>
+                                    KottValidate makes HTML form validation easy, fast and efffective. After proper installation of KottValidate plugin using the CDNs, it takes just a single line of jQuery code to validate the form. KottValidate is a jQuery-based-solution, making it easy to implement in a jQuery code. A demo is shown below:
+                                </p>
+                            </div>
+                            <!-- demo code container starts -->
+                            <div class="container-fluid" id="demo-code-details">
+                                <h5 class="text-decoration-underline mt-3 mb-2"># Demo code</h5>
+                                <div class="code-container p-4 pb-2 rounded-3 position-relative">
+                                    <img title="copy to clipboard" src="./images/clipboard2.svg" alt="copy" class="img-fluid d-block position-absolute copy-btn" role="button">
+                                    <!-- demo code -->
+                                    <pre><code data-language="html"><form class="w-50 m-auto" id="form">&NewLine;    <div class="mb-3">&NewLine;        <label for="exampleInputEmail1" class="form-label">Email address</label>&NewLine;        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">&NewLine;        <div id="emailHelp" class="form-text">&NewLine;            We'll never share your email with anyone else.&NewLine;        </div>&NewLine;    </div>&NewLine;    <div class="mb-3">&NewLine;        <label for="exampleInputPassword1" class="form-label">Password</label>&NewLine;        <input type="password" class="form-control" id="exampleInputPassword1">&NewLine;    </div>&NewLine;    <select class="form-select" aria-label="Default select example">&NewLine;        <option value="" selected>Open this select menu</option>&NewLine;        <option value="1">One</option>&NewLine;        <option value="2">Two</option>&NewLine;        <option value="3">Three</option>&NewLine;    </select>&NewLine;    <button type="submit" class="btn btn-primary mt-3 d-block mx-auto">Submit</button>&NewLine;</form>&NewLine;<script>
+    $("#form_").submit(function(e){
+         e.preventDefault()
+         $("#form_").validateForm()})
+</script>
+                                    </code></pre>
+                                    <!-- demo code ends -->
+                                </div>
+                            </div>
+                            <!-- demo code container ends -->
+
+                            <!-- demo form container starts -->
+                            <div class="" id="demo-form-details">
+                                <h5 class="text-decoration-underline mt-3 mb-2"># Demo form</h5>
+                                <p>You can play around with the form</p>
+                                <div class="result-container rounded-3 p-4">
+                                    <form class="w-50 m-auto" id="form_">
+                                        <div class="mb-3">
+                                          <label for="exampleInputEmail" class="form-label">Email address</label>
+                                          <input type="email" name="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp">
+                                          <div id="emailHelp_" class="form-tex text-dark">We'll never share your email with anyone else.</div>
+                                        </div>
+                                        <div class="mb-3">
+                                          <label for="exampleInputPassword" class="form-label">Password</label>
+                                          <input type="password" class="form-control" id="exampleInputPassword">
+                                        </div>
+                                        <select class="form-select" aria-label="Default select example">
+                                          <option value="" selected>Open this select menu</option>
+                                          <option value="1">One</option>
+                                          <option value="2">Two</option>
+                                          <option value="3">Three</option>
+                                        </select>
+                                        <button type="submit" class="btn btn-primary mt-3 d-block mx-auto">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- demo form container ends -->
+
+                            <!-- option start -->
+                            <div class="container-fluid" id="options-details">
+                                <h5 class="text-decoration-underline my-3"># Options for the validate form method and values</h5>
+                                <!-- table container starts -->
+                                <div class="table-responsive-md">
+                                <!-- options table starts -->
+                                    <table class="table table-bordered table-hover" id="options-table">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Default Value</th>
+                                            <th scope="col">Description</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <!-- optional fields -->
+                                          <tr class="tr" role="button" data-bs-toggle="collapse" data-bs-target="#optionalFields" aria-expanded="false" aria-controls="optionalFields">
+                                            <th scope="row"><i class="ri-add-circle-line"></i></th>
+                                            <td>optionalFields</td>
+                                            <td class="text-center">[]</td>
+                                            <td>An array of CSS id selector of input fields that are optional and ignores them in the validation</td>
+                                          </tr>
+                                          <!-- optional fields ends -->
+    
+                                          <!-- collapsible row for optional fields -->
+                                          <tr class="hide" style="height: fit-content;">
+                                            <td colspan="1" class="p-0" style="height: fit-content;"></td>
+                                            <td colspan="3" class="p-0" style="height: fit-content;">
+                                                <div class="collapse px-5 py-3" id="optionalFields">
+                                                    <span class="fw-bold">Demo code:</span>
+                                                    <pre><code data-language="javascript">$("#form").validateForm({
+         optionalFields:["#otherNames", "#dob"]
+    })</code></pre>
+                                                <p>Here, the input fields with id's otherNames and dob will be ignored in the validation.</p>
+                                            </td>
+                                          </tr>
+                                          <!-- collapsible row for optional fields ends -->
+    
+                                          <!-- passowrd strength -->
+                                          <tr class="tr" role="button"  data-bs-toggle="collapse" data-bs-target="#checkPasswordStrength" aria-expanded="false" aria-controls="checkPasswordStrength">
+                                            <th scope="row"><i class="ri-add-circle-line"></i></th>
+                                            <td>checkPasswordStrength</td>
+                                            <td class="text-center">false</td>
+                                            <td>When set to true checks the strength of input field ":password"</td>
+                                          </tr>
+                                          <!-- password strength ends -->
+    
+                                          <!-- collapsible row for password strength -->
+                                          <tr class="hide" style="height: fit-content;">
+                                            <td colspan="1" class="p-0" style="height: fit-content;"></td>
+                                            <td colspan="3" class="p-0" style="height: fit-content;">
+                                                <div class="collapse px-5 py-3" id="checkPasswordStrength">
+                                                    <span class="fw-bold">Demo code:</span>
+                                                    <pre><code data-language="javascript">$("#form").validateForm({
+         checkPasswordStrength:true
+    })</code></pre>
+                                                <p>Here, the values of input fields with password type will be tested against regex values which is dependent on the value of the passwordStrict value.</p>
+                                                </div>
+                                            </td>
+                                          </tr>
+                                          <!-- collapsible row for password strength ends -->
+    
+                                          <!-- password strict -->
+                                          <tr class="tr" role="button"  data-bs-toggle="collapse" data-bs-target="#passwordStrict" aria-expanded="false" aria-controls="passwordStrict">
+                                            <th scope="row"><i class="ri-add-circle-line"></i></th>
+                                            <td>passwordStrict</td>
+                                            <td class="text-center">false</td>
+                                            <td>
+                                                When set to true accepts only strong password otherwise, a medium password would be accepted too.
+                                            </td>
+                                          </tr>
+                                          <!-- password strict ends -->
+    
+                                          <!-- collapsible row for password strict -->
+                                          <tr class="hide" style="height: fit-content;">
+                                            <td colspan="1" class="p-0" style="height: fit-content;"></td>
+                                            <td colspan="3" class="p-0" style="height: fit-content;">
+                                                <div class="collapse px-5 py-3" id="passwordStrict">
+                                                    <span class="fw-bold">Demo code:</span>
+                                                    <pre><code data-language="javascript">$("#form").validateForm({
+         checkPasswordStrength: true,
+         passwordStrict: true
+    })</code></pre>
+                                                    <p><span class="text-decoration-underline fw-bold">Strong password</span>: Password must have at least 8 characters and contain at least 1 lowercase, 1 uppercase and 1 special character.</p>
+                                                    <p><span class="text-decoration-underline fw-bold">Medium password</span>: Password must have at least 6 characters and contain at least one lowercase and one uppercase character or has at least one lowercase and one numeric character or has at least one uppercase and one numeric character.</p>
+                                                </div>
+                                            </td>
+                                          </tr>
+                                          <!-- collapsible row for password strict ended -->
+    
+                                          <!-- confirm password -->
+                                          <tr class="tr" role="button" data-bs-toggle="collapse" data-bs-target="#confirmPassword" aria-expanded="false" aria-controls="confirmPassword">
+                                            <th scope="row"><i class="ri-add-circle-line"></i></th>
+                                            <td>confirmPassword</td>
+                                            <td class="text-center">[]</td>
+                                            <td>
+                                                Accepts two css id selector of two password input fields. Checks if the values of both input fields are same and if not, displays and error message
+                                            </td>
+                                          </tr>
+                                          <!-- confirm password ends -->
+    
+                                          <!-- collapsible row for confirm password -->
+                                          <tr class="hide" style="height: fit-content;">
+                                            <td colspan="1" class="p-0" style="height: fit-content;"></td>
+                                            <td colspan="3" class="p-0" style="height: fit-content;">
+                                                <div class="collapse px-5 py-3" id="confirmPassword">
+                                                    <span class="fw-bold">Demo code:</span>
+                                                    <pre><code data-language="javascript">$("#form").validateForm({
+        confirmPassword: ["#password1", "password2"]
+    })</code></pre> 
+                                                </div>
+                                            </td>
+                                          </tr>
+                                          <!-- collapsible row for confirm password ends -->
+    
+                                          <!-- custom feedback message -->
+                                          <tr class="tr" role="button" data-bs-toggle="collapse" data-bs-target="#customFeedbackMsg" aria-expanded="false" aria-controls="customFeedbackMsg">
+                                            <th scope="row"><i class="ri-add-circle-line"></i></th>
+                                            <td>customFeedbackMsg</td>
+                                            <td class="text-center">{}</td>
+                                            <td>
+                                                An object with css selectors (id, name or type) as object keys and custom feedback message as values. <br><span class="fw-bold"><span class="fw-bolder text-decoration-underline">Note</span>: id > name > type</span>
+                                            </td>
+                                          </tr>
+                                          <!-- custom feedback message ends -->
+    
+                                          <!-- collapsible row for custom feedback message -->
+                                          <tr class="hide" style="height: fit-content;">
+                                            <td colspan="1" class="p-0" style="height: fit-content;"></td>
+                                            <td colspan="3" class="p-0" style="height: fit-content;">
+                                                <div class="collapse px-5 py-3" id="customFeedbackMsg">
+                                                    <span class="fw-bold">Demo code:</span>
+                                                    <pre><code data-language="javascript">$("#form").validateForm({
+        customFeedbackMsg:{
+            ":name":"Please enter your full name",
+            "#email": "Please enter a valid email address"
+        }
+    })</code></pre> 
+                                                </div>
+                                            </td>
+                                          </tr>
+                                          <!-- collapsible row for custom feedback message ends -->
+    
+                                          <!-- complete -->
+                                          <tr class="tr" role="button" data-bs-toggle="collapse" data-bs-target="#complete" aria-expanded="false" aria-controls="complete">
+                                            <th scope="row"><i class="ri-add-circle-line"></i></th>
+                                            <td>complete</td>
+                                            <td></td>
+                                            <td>A function to that should run on successful form validation.</td>
+                                          </tr>
+                                          <!-- complete ends -->
+    
+                                          <!-- collapsible row complete -->
+                                          <tr class="hide" style="height: fit-content;">
+                                            <td colspan="1" class="p-0" style="height: fit-content;"></td>
+                                            <td colspan="3" class="p-0" style="height: fit-content;">
+                                                <div class="collapse px-5 py-3" id="complete">
+                                                    <span class="fw-bold">Demo code:</span>
+                                                    <pre><code data-language="javascript">$("#form").validateForm({
+        complete: function(){
+            $("body").empty()
+        }
+    })</code></pre>
+                                                </div>
+                                            </td>
+                                          </tr>
+                                          <!-- collapsible row for complete ends -->
+                                        </tbody>
+                                    </table>
+                                    <!-- options table end -->
+                                </div>
+                                <!-- table container -->
+                            </div>
+                            <!-- options end -->
+                        </div>
+                        <!-- docs container ends -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rainbow JS -->
+    <script src="./scripts/rainbow-custom.min.js"></script>
+    <!-- Bootstrap JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <!-- Validate JS only -->
+    <script src="https://cdn.jsdelivr.net/gh/CotterellAnna/KottValidate_plugin/validate.min.js"></script>
+     <!-- jQuery datatables JS CDN -->
+     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./scripts/main.js"></script>
+</body>
+</html>
