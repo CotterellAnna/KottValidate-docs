@@ -366,7 +366,7 @@
                                             <td>customFeedbackMsg</td>
                                             <td class="text-center">{}</td>
                                             <td>
-                                                An object with css selectors (id, name or type) as object keys and custom feedback message as values. <br><span class="fw-bold"><span class="fw-bolder text-decoration-underline">Note</span>: id > name > type</span>
+                                                An object with id, name or type as object keys and custom feedback message as values. <br><span class="fw-bold"><span class="fw-bolder text-decoration-underline">Note</span>: id > name > type</span>
                                             </td>
                                           </tr>
                                           <!-- custom feedback message ends -->
@@ -379,8 +379,12 @@
                                                     <span class="fw-bold">Demo code:</span>
                                                     <pre><code data-language="javascript">$("#form").validateForm({
         customFeedbackMsg:{
-            ":name":"Please enter your full name",
-            "#email": "Please enter a valid email address"
+            <!-- for input field with id "email"-->
+            "email": "Please enter a valid email address",
+            <!-- for input field with name "fullname"-->
+            "fullname":"Please enter your full name",
+            <!-- for input field with type "password" -->
+            "password":"Please enter a valid password"
         }
     })</code></pre> 
                                                 </div>
